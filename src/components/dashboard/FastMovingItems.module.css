@@ -1,0 +1,89 @@
+.card {
+  height: 100%;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.select {
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: 12px;
+}
+
+.tableContainer {
+  overflow-x: auto;
+  margin: -10px;
+  width: 100%;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table th {
+  padding: 10px 16px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-surface-secondary);
+}
+
+.table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover td {
+  background-color: var(--bg-surface-hover);
+}
+
+.rankBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-info-bg);
+  color: var(--color-info-text);
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.tdProduct {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.tdQuantity, .tdValue, .thQuantity, .thValue {
+  text-align: right;
+}
+
+.tdQuantity {
+  font-variant-numeric: tabular-nums;
+  color: var(--text-secondary);
+}
+
+.tdValue {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
