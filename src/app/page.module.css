@@ -1,0 +1,40 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.bentoGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+.colSpan12 { grid-column: span 12; }
+.colSpan8 { grid-column: span 8; }
+.colSpan6 { grid-column: span 6; }
+.colSpan4 { grid-column: span 4; }
+.colSpan3 { grid-column: span 3; }
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+}
+
+@media (max-width: 1400px) {
+  .colSpan8 { grid-column: span 12; }
+  .colSpan4 { grid-column: span 12; }
+  .colSpan3 { grid-column: span 6; }
+}
+
+@media (max-width: 1024px) {
+  .colSpan3 { grid-column: span 12; }
+}
+
+@media (max-width: 768px) {
+  .bentoGrid {
+    display: flex;
+    flex-direction: column;
+  }
+}
