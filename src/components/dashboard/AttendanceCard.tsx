@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { AttendanceData } from '@/types';
 import { Card } from '../ui/Card';
 import { Skeleton } from '../ui/Skeleton';
+import { Modal } from '../ui/Modal';
 import { getAttendanceData } from '@/services/secondaryService';
 import { useRefresh } from '@/providers/RefreshProvider';
 import {
@@ -18,6 +19,7 @@ import styles from './AttendanceCard.module.css';
 export default function AttendanceCard() {
   const [data, setData] = useState<AttendanceData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [selectedEmployee, setSelectedEmployee] = useState<AttendanceData['employees'][0] | null>(null);
   const { refreshKey } = useRefresh();
 
   useEffect(() => {
@@ -37,7 +39,7 @@ export default function AttendanceCard() {
 
   if (loading || !data) {
     return (
-      <Card title="Employee Attendance">
+      <Card title="Overall Employees Attendance">
         <div className={styles.loading}>
           <Skeleton height={200} borderRadius="var(--radius-md)" />
         </div>
@@ -51,7 +53,7 @@ export default function AttendanceCard() {
   ];
 
   return (
-    <Card title="Employee Attendance" className={styles.card}>
+    <Card title="Overall Employees Attendance" className={styles.card}>
       <div className={styles.container}>
         <div className={styles.chartContainer}>
           <ResponsiveContainer width="100%" height="100%">
@@ -107,6 +109,60 @@ export default function AttendanceCard() {
           </div>
         </div>
       </div>
+
+      <div className={styles.employeeSection}>
+        <h3 className={styles.sectionTitle}>Employeewise Attendance</h3>
+        <div className={styles.employeeList}>
+          {data.employees?.map((emp) => (
+            <div 
+              key={emp.id} 
+              className={styles.employeeItem}
+              onClick={() => setSelectedEmployee(emp)}
+            >
+              <div className={styles.employeeInfo}>
+                <span className={styles.employeeName}>{emp.name}</span>
+                <span className={styles.employeeDept}>{emp.department}</span>
+              </div>
+              <div className={styles.employeeStatus}>
+                <span className={`${styles.statusBadge} ${emp.status === 'Present' ? styles.statusPresent : styles.statusAbsent}`}>
+                  {emp.status}
+                </span>
+                <span className={styles.timeIn}>{emp.timeIn}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <Modal 
+        isOpen={!!selectedEmployee} 
+        onClose={() => setSelectedEmployee(null)}
+        title={`${selectedEmployee?.name} - Attendance History`}
+      >
+        {selectedEmployee && (
+          <div className={styles.historyList}>
+            <div className={styles.historyHeader}>
+              <span>Date</span>
+              <span>Status</span>
+              <span>Time In</span>
+              <span>Time Out</span>
+            </div>
+            {selectedEmployee.history?.map((record, idx: number) => (
+              <div key={idx} className={styles.historyRow}>
+                <span className={styles.historyDate}>{record.date}</span>
+                <span className={`${styles.statusBadge} ${
+                  record.status === 'Present' ? styles.statusPresent : 
+                  record.status === 'Absent' ? styles.statusAbsent : styles.statusLate
+                }`}>
+                  {record.status}
+                </span>
+                <span className={styles.historyTime}>{record.timeIn}</span>
+                <span className={styles.historyTime}>{record.timeOut}</span>
+              </div>
+            )) || <div className={styles.noHistory}>No history available.</div>}
+          </div>
+        )}
+      </Modal>
     </Card>
   );
 }

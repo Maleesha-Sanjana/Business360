@@ -64,4 +64,86 @@ export const attendanceData = {
   present: 109,
   absent: 16,
   rate: 87.2,
+  employees: [
+    { 
+      id: 'E001', name: 'Nimal Perera', department: 'Sales', status: 'Present' as const, timeIn: '08:15 AM',
+      history: [
+        { date: '2026-09-24', status: 'Present' as const, timeIn: '08:10 AM', timeOut: '05:00 PM' },
+        { date: '2026-09-23', status: 'Present' as const, timeIn: '08:12 AM', timeOut: '05:15 PM' },
+        { date: '2026-09-22', status: 'Late' as const, timeIn: '09:05 AM', timeOut: '05:30 PM' },
+        { date: '2026-09-21', status: 'Present' as const, timeIn: '08:15 AM', timeOut: '05:00 PM' },
+        { date: '2026-09-20', status: 'Absent' as const, timeIn: '-', timeOut: '-' }
+      ]
+    },
+    { 
+      id: 'E002', name: 'Kamal Silva', department: 'IT', status: 'Present' as const, timeIn: '08:25 AM',
+      history: [
+        { date: '2026-09-24', status: 'Present' as const, timeIn: '08:20 AM', timeOut: '05:30 PM' },
+        { date: '2026-09-23', status: 'Present' as const, timeIn: '08:25 AM', timeOut: '05:45 PM' },
+        { date: '2026-09-22', status: 'Present' as const, timeIn: '08:15 AM', timeOut: '05:30 PM' },
+        { date: '2026-09-21', status: 'Late' as const, timeIn: '09:10 AM', timeOut: '05:00 PM' },
+        { date: '2026-09-20', status: 'Present' as const, timeIn: '08:20 AM', timeOut: '05:00 PM' }
+      ]
+    },
+    { 
+      id: 'E003', name: 'Sunil Fernando', department: 'HR', status: 'Absent' as const, timeIn: '-',
+      history: [
+        { date: '2026-09-24', status: 'Present' as const, timeIn: '08:00 AM', timeOut: '05:00 PM' },
+        { date: '2026-09-23', status: 'Absent' as const, timeIn: '-', timeOut: '-' },
+        { date: '2026-09-22', status: 'Present' as const, timeIn: '08:05 AM', timeOut: '05:00 PM' },
+        { date: '2026-09-21', status: 'Present' as const, timeIn: '08:00 AM', timeOut: '05:00 PM' },
+        { date: '2026-09-20', status: 'Present' as const, timeIn: '08:10 AM', timeOut: '05:00 PM' }
+      ]
+    },
+    { 
+      id: 'E004', name: 'Malini Peiris', department: 'Finance', status: 'Present' as const, timeIn: '08:20 AM',
+      history: [
+        { date: '2026-09-24', status: 'Present' as const, timeIn: '08:15 AM', timeOut: '05:00 PM' },
+        { date: '2026-09-23', status: 'Present' as const, timeIn: '08:20 AM', timeOut: '05:00 PM' },
+        { date: '2026-09-22', status: 'Present' as const, timeIn: '08:18 AM', timeOut: '05:00 PM' },
+        { date: '2026-09-21', status: 'Present' as const, timeIn: '08:20 AM', timeOut: '05:00 PM' },
+        { date: '2026-09-20', status: 'Absent' as const, timeIn: '-', timeOut: '-' }
+      ]
+    },
+    { 
+      id: 'E005', name: 'Roshan Kumara', department: 'Production', status: 'Present' as const, timeIn: '08:05 AM',
+      history: [
+        { date: '2026-09-24', status: 'Present' as const, timeIn: '08:00 AM', timeOut: '04:30 PM' },
+        { date: '2026-09-23', status: 'Present' as const, timeIn: '08:05 AM', timeOut: '04:30 PM' },
+        { date: '2026-09-22', status: 'Late' as const, timeIn: '08:45 AM', timeOut: '04:30 PM' },
+        { date: '2026-09-21', status: 'Present' as const, timeIn: '08:00 AM', timeOut: '04:30 PM' },
+        { date: '2026-09-20', status: 'Present' as const, timeIn: '08:05 AM', timeOut: '04:30 PM' }
+      ]
+    },
+    { 
+      id: 'E006', name: 'Chandani Perera', department: 'Marketing', status: 'Absent' as const, timeIn: '-',
+      history: [
+        { date: '2026-09-24', status: 'Absent' as const, timeIn: '-', timeOut: '-' },
+        { date: '2026-09-23', status: 'Present' as const, timeIn: '08:30 AM', timeOut: '05:00 PM' },
+        { date: '2026-09-22', status: 'Present' as const, timeIn: '08:25 AM', timeOut: '05:00 PM' },
+        { date: '2026-09-21', status: 'Present' as const, timeIn: '08:30 AM', timeOut: '05:00 PM' },
+        { date: '2026-09-20', status: 'Late' as const, timeIn: '09:15 AM', timeOut: '05:00 PM' }
+      ]
+    },
+    { 
+      id: 'E007', name: 'Ruwan Bandara', department: 'Sales', status: 'Present' as const, timeIn: '08:35 AM',
+      history: [
+        { date: '2026-09-24', status: 'Present' as const, timeIn: '08:30 AM', timeOut: '05:30 PM' },
+        { date: '2026-09-23', status: 'Present' as const, timeIn: '08:35 AM', timeOut: '05:30 PM' },
+        { date: '2026-09-22', status: 'Present' as const, timeIn: '08:30 AM', timeOut: '05:30 PM' },
+        { date: '2026-09-21', status: 'Present' as const, timeIn: '08:35 AM', timeOut: '05:30 PM' },
+        { date: '2026-09-20', status: 'Present' as const, timeIn: '08:30 AM', timeOut: '05:30 PM' }
+      ]
+    },
+    { 
+      id: 'E008', name: 'Saman Kumara', department: 'Production', status: 'Present' as const, timeIn: '08:10 AM',
+      history: [
+        { date: '2026-09-24', status: 'Present' as const, timeIn: '08:10 AM', timeOut: '04:30 PM' },
+        { date: '2026-09-23', status: 'Late' as const, timeIn: '08:45 AM', timeOut: '04:30 PM' },
+        { date: '2026-09-22', status: 'Present' as const, timeIn: '08:15 AM', timeOut: '04:30 PM' },
+        { date: '2026-09-21', status: 'Present' as const, timeIn: '08:10 AM', timeOut: '04:30 PM' },
+        { date: '2026-09-20', status: 'Absent' as const, timeIn: '-', timeOut: '-' }
+      ]
+    },
+  ]
 };

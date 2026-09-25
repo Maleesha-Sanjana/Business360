@@ -14,7 +14,8 @@ import {
   UserCheck, 
   Settings,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  MapPin
 } from 'lucide-react';
 import clsx from 'clsx';
 import styles from './Sidebar.module.css';
@@ -28,6 +29,7 @@ const menuItems = [
   { name: 'Cheques', path: '/cheques', icon: FileText },
   { name: 'Attendance', path: '/attendance', icon: Users },
   { name: 'Salesmen', path: '/salesmen', icon: UserCheck },
+  { name: 'Locations', path: '/locations', icon: MapPin },
 ];
 
 export default function Sidebar() {

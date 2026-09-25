@@ -32,8 +32,8 @@ export const purchasingData = [
 ];
 
 export const salesmanData = [
-  { name: 'John Doe', sales: 2400000, profit: 420000, target: 2000000, achievement: 120 },
-  { name: 'Jane Smith', sales: 1950000, profit: 350000, target: 2000000, achievement: 97.5 },
-  { name: 'Michael Silva', sales: 1680000, profit: 290000, target: 1500000, achievement: 112 },
-  { name: 'Sarah Perera', sales: 1420000, profit: 240000, target: 1500000, achievement: 94.6 },
+  { name: 'Kasun Kalhara', sales: 2400000, profit: 420000, target: 2000000, achievement: 120 },
+  { name: 'Nimal Fernando', sales: 1950000, profit: 350000, target: 2000000, achievement: 97.5 },
+  { name: 'Nuwan Pradeep', sales: 1680000, profit: 290000, target: 1500000, achievement: 112 },
+  { name: 'Amila Perera', sales: 1420000, profit: 240000, target: 1500000, achievement: 94.6 },
 ];

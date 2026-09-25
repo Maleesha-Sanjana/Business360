@@ -86,4 +86,17 @@ export interface AttendanceData {
   present: number;
   absent: number;
   rate: number;
+  employees: {
+    id: string;
+    name: string;
+    department: string;
+    status: 'Present' | 'Absent';
+    timeIn: string;
+    history?: {
+      date: string;
+      status: 'Present' | 'Absent' | 'Late';
+      timeIn: string;
+      timeOut: string;
+    }[];
+  }[];
 }

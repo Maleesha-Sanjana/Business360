@@ -1,0 +1,84 @@
+.container {
+  display: flex;
+  gap: 24px;
+  height: 70vh;
+  margin-top: 16px;
+}
+
+.mapWrapper {
+  flex: 3;
+  height: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.listWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--bg-surface-secondary);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  overflow-y: auto;
+}
+
+.listHeader {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.regionRow {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.regionRow:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.regionInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.regionName {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.regionSales {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.trendUp {
+  color: var(--color-success);
+  font-weight: 700;
+  background: rgba(34, 197, 94, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.trendDown {
+  color: var(--color-critical);
+  font-weight: 700;
+  background: rgba(239, 68, 68, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 13px;
+}

@@ -1,0 +1,87 @@
+.tickerContainer {
+  display: flex;
+  align-items: center;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  height: 40px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.tickerLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-surface-secondary);
+  padding: 0 16px;
+  height: 100%;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--text-primary);
+  border-right: 1px solid var(--border-color);
+  z-index: 2;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+}
+
+.liveDot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-critical);
+  border-radius: 50%;
+  animation: blink 1.5s infinite ease-in-out;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+.tickerTrack {
+  flex: 1;
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.tickerContent {
+  display: flex;
+  width: fit-content;
+  animation: scrollTicker 30s linear infinite;
+}
+
+.tickerContent:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollTicker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Scrolls exactly half its width, revealing the duplicate seamlessly */
+}
+
+.tickerItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 32px;
+  white-space: nowrap;
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.tickerItem span {
+  position: relative;
+  top: 1px;
+}
+
+.iconSuccess { color: var(--color-success); }
+.iconCritical { color: var(--color-critical); }
+.iconWarning { color: var(--color-warning); }
+.iconPrimary { color: var(--color-primary); }
