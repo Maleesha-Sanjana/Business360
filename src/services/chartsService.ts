@@ -20,7 +20,19 @@ export async function getPurchasingData() {
   return purchasingData;
 }
 
-export async function getSalesmanData() {
-  await new Promise(resolve => setTimeout(resolve, 900));
-  return salesmanData;
+export async function getSalesmanData(filters?: any) {
+  await new Promise(resolve => setTimeout(resolve, 500));
+  
+  const data = JSON.parse(JSON.stringify(salesmanData));
+  
+  if (filters && (filters.branch !== 'all' || filters.date !== 'month' || filters.salesman !== 'all')) {
+    data.forEach((row: any) => {
+      const factor = 0.4 + (Math.random() * 0.9); // Randomize
+      row.sales *= factor;
+      row.achievement = Math.round(row.achievement * factor);
+      row.profit *= factor;
+    });
+  }
+  
+  return data;
 }

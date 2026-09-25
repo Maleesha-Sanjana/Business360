@@ -7,6 +7,7 @@ import { Skeleton } from '../ui/Skeleton';
 import { getDashboardData } from '@/services/dashboardService';
 import { formatCurrencyShort, formatNumber } from '@/utils/formatters';
 import { useRefresh } from '@/providers/RefreshProvider';
+import { useFilters } from '@/providers/FilterProvider';
 import styles from './KPIGrid.module.css';
 
 export default function KPIGrid() {
@@ -14,12 +15,13 @@ export default function KPIGrid() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const { refreshKey } = useRefresh();
+  const { filters } = useFilters();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const result = await getDashboardData();
+        const result = await getDashboardData(filters);
         setData(result);
         setError(null);
       } catch (err) {
@@ -31,7 +33,7 @@ export default function KPIGrid() {
     };
 
     fetchData();
-  }, [refreshKey]);
+  }, [refreshKey, filters]);
 
   if (error) {
     return (

@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/providers/ThemeProvider';
 import { RefreshProvider } from '@/providers/RefreshProvider';
+import { FilterProvider } from '@/providers/FilterProvider';
 import DashboardLayout from '@/components/layout/DashboardLayout';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -21,9 +22,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider>
-          <RefreshProvider>
-            <DashboardLayout>{children}</DashboardLayout>
-          </RefreshProvider>
+          <FilterProvider>
+            <RefreshProvider>
+              <DashboardLayout>{children}</DashboardLayout>
+            </RefreshProvider>
+          </FilterProvider>
         </ThemeProvider>
       </body>
     </html>
